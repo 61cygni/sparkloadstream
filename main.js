@@ -22,7 +22,12 @@ const spark = new NewSparkRenderer({
 });
 scene.add(spark);
 
-const splat = new SplatMesh({ url: "/splats/cozy_ship-lod-0.spz" });
+// For streaming: use paged: true with a -lod-0.spz file
+// The system will automatically fetch -lod-1.spz, -lod-2.spz, etc.
+const splat = new SplatMesh({ 
+  url: "https://public-spz.t3.storage.dev/cozyship/splats/cozy_ship-lod-0.spz",
+  paged: true,  // Enable streaming
+});
 scene.add(splat);
 
 // Controls
