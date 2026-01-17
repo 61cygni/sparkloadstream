@@ -12,8 +12,8 @@ const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerH
 
 // Local frame for camera control and WebXR reference
 const localFrame = new THREE.Group();
-localFrame.position.set(-7.89, 6.74, -0.31);
-localFrame.rotation.set(0, Math.PI / 2, 0);
+localFrame.position.set(-7.33, 6.05, -0.31);
+localFrame.rotation.set(0, -Math.PI, 0);
 scene.add(localFrame);
 localFrame.add(camera);
 
@@ -28,7 +28,8 @@ scene.add(spark);
 // For streaming: use paged: true with a -lod-0.spz file
 // The system will automatically fetch -lod-1.spz, -lod-2.spz, etc.
 const splat = new SplatMesh({ 
-  url: "https://public-spz.t3.storage.dev/cozyship/splats/cozy_ship-lod-0.spz",
+  //url: "https://public-spz.t3.storage.dev/cozyship/splats/cozy_ship-lod-0.spz",
+  url: "https://public-spz.t3.storage.dev/cozyspaceship2/cozy-spaceship_2-lod-0.spz",
   paged: true,  // Enable streaming
 });
 scene.add(splat);
